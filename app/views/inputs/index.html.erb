@@ -1,7 +1,7 @@
 <h1>Supporter</h1>
 
 <% @input.each do |x| %>
-  <%= link_to x, input_path(x) %>
+  <%= link_to x.name, input_path(x) %>
   <br>
   <hr>
 <% end %>

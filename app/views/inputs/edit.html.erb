@@ -1,7 +1,7 @@
 <% if @input.errors.any? %>
   <ul>
-    <%= @input.errors.full_message.each do |msg| %>
-    <li><%= msg %></li>
+    <% @input.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
