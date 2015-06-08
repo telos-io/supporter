@@ -1,0 +1,9 @@
+<h2><%= @input.name %></h2>
+<p><%= @input.email %></p>
+<p><%= @input.department %></p>
+<p><%= @input.message %></p>
+
+<%= link_to "Edit", edit_input_path(@input) %> | 
+
+<%= link_to "Delete", input_path(@input),
+              method: :delete, data: {confirm: "Are you sure"} %>
