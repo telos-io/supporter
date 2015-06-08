@@ -1,7 +1,21 @@
 <h1>Supporter</h1>
-
+<table>
+  <tr class="head">
+    <td>Name</td>
+    <td>Email</td>
+    <td>Department</td>
+    <td>Message</td>
+    <td>Actions</td>
+  </tr>
 <% @input.each do |x| %>
-  <%= link_to x.name, input_path(x) %>
-  <br>
-  <hr>
+    <tr>
+      <td><%= link_to x.name, input_path(x) %></td>
+      <td><a href="mailto:<%= x.email %>"><%= x.email %></a></td>
+      <td><%= x.department %></td>
+      <td><%= x.message %></td>
+      <td><%= link_to "Edit", edit_input_path(@input) %> |
+          <%= link_to "Delete", input_path(@input),
+                    method: :delete, data: {confirm: "Are you sure"} %></td>
+    </tr>
 <% end %>
+</table>
